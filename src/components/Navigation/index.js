@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { isObjectEmpty } from '../../utils';
-import Button from '../../components/Button';
+import Button from '../Button';
 import styles from './navigation.module.scss';
 
 const Navigation = ({ goToPrevious, goToNext, navigation }) => {

@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { composeClasses } from "../../utils";
-import styles from "./input.module.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { composeClasses } from '../../utils';
+import styles from './input.module.scss';
 
 const Input = ({ className, handleChange, label, name, placeholder, testId, type }) => {
   return (
@@ -16,7 +16,7 @@ const Input = ({ className, handleChange, label, name, placeholder, testId, type
         id={name}
         name={name}
         onChange={handleChange}
-        placeholder={placeholder || " "}
+        placeholder={placeholder || ' '}
         type={type}
       />
     </>

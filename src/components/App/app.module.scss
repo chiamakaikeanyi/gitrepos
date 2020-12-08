@@ -1,0 +1,55 @@
+@import '../../styles/shared.scss';
+
+.app_name {
+  font-family: fantasy;
+  font-size: to-rem(30);
+  font-weight: 600;
+  text-align: center;
+}
+
+.search_wrapper {
+  display: flex;
+  // Fallback for browsers that don't support flex e.g. Opera Mini
+  @supports not (display: flex) {
+    display: block;
+  }
+
+  align-items: center;
+  justify-content: center;
+  margin: to-rem(32) 0;
+}
+
+.search_field {
+  border: to-rem(1) solid var(--color_gray_1);
+  border-radius: to-rem(3);
+  flex: 2;
+  font-size: to-rem(15);
+  line-height: to-rem(20);
+  outline-color: var(--color_gray_1);
+  padding: to-rem(10);
+  width: to-rem(400);
+
+  &:focus {
+    border: to-rem(1) solid var(--color_blue_1);
+    box-shadow: 0 to-rem(2 10) var(--color_blue_1);
+  }
+}
+
+.search_button {
+  background-color: var(--color_blue_1);
+  color: var(--color_white);
+  margin-left: to-rem(5);
+
+  &:hover {
+    box-shadow: 0 to-rem(4 8) 0 var(--color_gray_1);
+    background: var(--color_blue_2);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.spinner_wrapper {
+  text-align: center;
+}
