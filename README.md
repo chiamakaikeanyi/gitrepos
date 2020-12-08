@@ -82,7 +82,7 @@ yarn test:coverage
 
 ## Stopping the App
 
-To stop the app, run';
+To stop the app, run;
 
 ```sh
 yarn down
