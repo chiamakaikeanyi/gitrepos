@@ -45,10 +45,9 @@
     },
     "lint-staged": {
         "*.js": [
-        "pretty-quick --staged",
-            "stylelint --fix"
-    ],
-    "*.{json,css}": [
+        "pretty-quick --staged"
+        ],
+            "*.{json,css}": [
             "stylelint --fix"
             ]
     },
