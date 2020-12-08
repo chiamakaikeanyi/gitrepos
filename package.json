@@ -19,7 +19,7 @@
     "test:fix": "yarn test -u",
     "test:coverage": "yarn test --coverage",
     "eject": "react-scripts eject",
-    "stylelint": "stylelint src/pages/**/*.scss src/components/**/*.scss",
+    "stylelint": "stylelint src/**/**/*.scss",
     "precommit": "yarn run lint-staged",
     "serve": "docker-compose up -d --build",
     "up": "docker-compose up",
@@ -45,11 +45,11 @@
   },
   "lint-staged": {
     "*.js": [
-      "pretty-quick --staged",
-      "stylelint --fix"
+      "pretty-quick --staged"
     ],
-    "*.{json,css}": [
-      "stylelint --fix"
+    "*.{css}": [
+      "stylelint --fix",
+      "pretty-quick --staged"
     ]
   },
   "husky": {
