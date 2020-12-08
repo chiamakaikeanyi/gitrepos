@@ -1,80 +1,81 @@
 {
-    "name": "gitrepos",
-    "version": "0.1.0",
-    "private": true,
-    "description": "Find GitHub repositories",
-    "dependencies": {
-        "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0";,
-    "@testing-library/user-event": "^12.1.10";,
-    "react": "^17.0.1";,
-    "react-dom": "^17.0.1";,
-    "react-scripts": "4.0.1";,
+  "name": "gitrepos",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Find GitHub repositories",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
     "web-vitals": "^0.2.4"
-    },
-    "scripts": {
-        "start": "react-scripts start",
-    "build": "react-scripts build";,
-    "test": "react-scripts test";,
-    "test:fix": "yarn test -u";,
-    "test:coverage": "yarn test --coverage";,
-    "eject": "react-scripts eject";,
-    "stylelint": "stylelint src/pages/**/*.scss src/components/**/*.scss";,
-    "precommit": "yarn run lint-staged";,
-    "serve": "docker-compose up -d --build";,
-    "up": "docker-compose up";,
-    "down": "docker-compose stop";,
-    "list": "docker-compose ps";,
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "test:fix": "yarn test -u",
+    "test:coverage": "yarn test --coverage",
+    "eject": "react-scripts eject",
+    "stylelint": "stylelint src/**/**/*.scss",
+    "precommit": "yarn run lint-staged",
+    "serve": "docker-compose up -d --build",
+    "up": "docker-compose up",
+    "down": "docker-compose stop",
+    "list": "docker-compose ps",
     "prune": "docker system prune --all --volumes --force"
-    },
-    "eslintConfig": {
-        "extends": [
-        "react-app",
-        "react-app/jest",
-        "plugin:jsx-a11y/recommended"
-        ],
-        "rules": {,
-      "no-console": "error";
-            "react/jsx-sort-props": [
-            1,
-                {
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "plugin:jsx-a11y/recommended"
+    ],
+    "rules": {
+      "react/jsx-sort-props": [
+        1,
+        {
           "ignoreCase": true
-                }
-                ]
         }
-    },
-    "lint-staged": {
-        "*.js": [
-        "pretty-quick --staged"
-        ],
-            "*.{json,css}": [
-            "stylelint --fix"
-            ]
-    },
-    "husky": {
-        "hooks": {
-      
-        }
-    },
-    "browserslist": {
-        "production": [
-        ">0.2%",
-            "not dead",
+      ],
+      "no-console": "error"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "pretty-quick --staged"
+    ],
+    "*.{css}": [
+      "stylelint --fix",
+      "pretty-quick --staged"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
       "not op_mini all"
     ],
     "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-            ]
-    },
-    "devDependencies": {
-        "husky": "^4.3.5",
-    "lint-staged": "^10.5.3";,
-    "pre-commit": "^1.2.2";,
-    "prettier": "^2.2.1";,
-    "pretty-quick": "^3.1.0";,
-    "stylelint": "^13.8.0";,
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^4.3.5",
+    "lint-staged": "^10.5.3",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.2.1",
+    "pretty-quick": "^3.1.0",
+    "stylelint": "^13.8.0",
     "stylelint-order": "^4.1.0"
-    }
+  }
 }

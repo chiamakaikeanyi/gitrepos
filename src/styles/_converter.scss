@@ -9,7 +9,7 @@ $global-font-size: 100% !default;
 // @param {Number} $num - Number to strip unit from.
 // @returns {Number} The same number, sans unit.
 @function strip-unit($num) {
-  @return $num / ($num * 0 + 1);
+    @return $num / ($num * 0 + 1);
 }
 
 // Converts one or more pixel values into matching rem values.
@@ -17,63 +17,63 @@ $global-font-size: 100% !default;
 // @param {Number} $base [null] - The base value to use when calculating the `rem`. If you're using Foundation out of the box, this is 16px. If this parameter is `null`, the function will reference the `$base-font-size` variable as the base.
 // @returns {List} A list of converted values.
 @function to-rem($values, $base: null) {
-  $rem-values: ();
-  $count: length($values); // If no base is defined, defer to the global font size
+    $rem-values: ();
+    $count: length($values); // If no base is defined, defer to the global font size
 
-  @if $base==null {
-    $base: $global-font-size;
-  }
+    @if $base==null {
+        $base: $global-font-size;
+    }
 
-  // If the base font size is a %, then multiply it by 16px
-  // This is because 100% font size = 16px in most all browsers
-  @if unit($base) == '%' {
-    $base: ($base / 100%) * 16px;
-  }
+    // If the base font size is a %, then multiply it by 16px
+    // This is because 100% font size = 16px in most all browsers
+    @if unit($base) == '%' {
+        $base: ($base / 100%) * 16px;
+    }
 
-  // Using rem as base allows correct scaling
+    // Using rem as base allows correct scaling
 
-  @if unit($base) == 'rem' {
-    $base: strip-unit($base) * 16px;
-  }
+    @if unit($base) == 'rem' {
+        $base: strip-unit($base) * 16px;
+    }
 
-  @if $count==1 {
-    @return convert-to-rem($values, $base);
-  }
+    @if $count==1 {
+        @return convert-to-rem($values, $base);
+    }
 
-  @for $i from 1 through $count {
-    $rem-values: append($rem-values, convert-to-rem(nth($values, $i), $base));
-  }
+    @for $i from 1 through $count {
+        $rem-values: append($rem-values, convert-to-rem(nth($values, $i), $base));
+    }
 
-  @return $rem-values;
+    @return $rem-values;
 }
 
 // Converts a unitless, pixel, or rem value to em.
 @function to-em($values) {
-  $em-values: ();
-  $count: length($values);
+    $em-values: ();
+    $count: length($values);
 
-  @if ($count > 1) {
-    @for $i from 1 through $count {
-      $value: nth($values, $i); // Pixel and unitless values are converted to rems
+    @if ($count > 1) {
+        @for $i from 1 through $count {
+            $value: nth($values, $i); // Pixel and unitless values are converted to rems
 
-      @if unit($value) == 'px' or unitless($value) {
-        $value: to-rem($value, $base: 16px);
-      }
+            @if unit($value) == 'px' or unitless($value) {
+                $value: to-rem($value, $base: 16px);
+            }
 
-      // Then the value is converted to ems
-      $em-values: append($em-values, strip-unit($value) * 1em);
+            // Then the value is converted to ems
+            $em-values: append($em-values, strip-unit($value) * 1em);
+        }
+
+        @return $em-values;
     }
 
-    @return $em-values;
-  }
+    $value: $values;
 
-  $value: $values;
+    @if unit($value) == 'px' or unitless($value) {
+        $value: to-rem($value, $base: 16px);
+    }
 
-  @if unit($value) == 'px' or unitless($value) {
-    $value: to-rem($value, $base: 16px);
-  }
-
-  @return strip-unit($value) * 1em;
+    @return strip-unit($value) * 1em;
 }
 
 // Converts a pixel value to matching rem value. *Any* value passed, regardless of unit, is assumed to be a pixel value. By default, the base pixel value used to calculate the rem value is taken from the `$global-font-size` variable.
@@ -83,24 +83,24 @@ $global-font-size: 100% !default;
 // @param {Number} $base [null] - Base for pixel conversion.
 // @returns {Number} A number in rems, calculated based on the given value and the base pixel value. rem values are passed through as is.
 @function convert-to-rem($value, $base: null) {
-  // Check if the value is a number
-  @if type-of($value) != 'number' {
-    @warn inspect($value)+' was passed to to-rem(), which is not a number.';
+    // Check if the value is a number
+    @if type-of($value) != 'number' {
+        @warn inspect($value)+' was passed to to-rem(), which is not a number.';
+
+        @return $value;
+    }
+
+    // Calculate rem if units for $value is not rem
+
+    @if unit($value) != 'rem' {
+        $value: strip-unit($value) / strip-unit($base) * 1rem;
+    }
+
+    // Turn 0rem into 0
+
+    @if $value==0rem {
+        $value: 0;
+    }
 
     @return $value;
-  }
-
-  // Calculate rem if units for $value is not rem
-
-  @if unit($value) != 'rem' {
-    $value: strip-unit($value) / strip-unit($base) * 1rem;
-  }
-
-  // Turn 0rem into 0
-
-  @if $value==0rem {
-    $value: 0;
-  }
-
-  @return $value;
 }

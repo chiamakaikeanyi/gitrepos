@@ -1,21 +1,21 @@
 :root {
-  --color_white: #fff;
-  --color_gray_1: #dfe1e5;
-  --color_gray_2: #eaecef;
-  --color_gray_3: #586069;
-  --color_gray_4: #24292e;
-  --color_gray_5: #0366d680;
-  --color_gray_6: #fafbfc;
-  --color_blue_1: #0366d6;
-  --color_blue_2: #01579b;
-  --color_blue_3: #0366d6b0;
+    --color_white: #fff;
+    --color_gray_1: #dfe1e5;
+    --color_gray_2: #eaecef;
+    --color_gray_3: #586069;
+    --color_gray_4: #24292e;
+    --color_gray_5: #0366d680;
+    --color_gray_6: #fafbfc;
+    --color_blue_1: #0366d6;
+    --color_blue_2: #01579b;
+    --color_blue_3: #0366d6b0;
 }
 
 * {
-  box-sizing: border-box;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
 }
 
 html,
@@ -38,27 +38,27 @@ header,
 footer,
 form,
 label {
-  margin: 0;
-  padding: 0;
-  border: 0;
+    border: 0;
+    margin: 0;
+    padding: 0;
 }
 
 html {
-  font-size: 100%;
+    font-size: 100%;
 }
 
 html,
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', sans-serif;
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: 'Helvetica Neue', Helvetica, Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
 }
 
 body {
-  font-size: 1rem;
-  line-height: 1.4;
+    font-size: 1rem;
+    line-height: 1.4;
 }
 
 footer,
@@ -66,42 +66,42 @@ header,
 nav,
 section,
 main {
-  display: block;
+    display: block;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 *:before,
 *:after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 ol,
 ul {
-  list-style: none;
+    list-style: none;
 }
 
 a {
-  color: var(--color_blue_1);
-  text-decoration: none;
+    color: var(--color_blue_1);
+    text-decoration: none;
 
-  &:hover {
-    text-decoration: underline;
-  }
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 :focus:not(:focus-visible) {
-  outline: none;
+    outline: none;
 }
 
 .sr_only {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
 }
