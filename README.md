@@ -13,7 +13,6 @@ An easy way to find GitHub repositories.
 - [Starting the App](#starting-the-app)
 - [Contributing](#contributing)
 - [Testing](#testing)
-- [Stopping the App](#stopping-the-app)
 - [License](#license)
 
 ## Pre-requisites
@@ -45,21 +44,23 @@ git clone https://github.com:chiamakaikeanyi/gitrepos.git
 cd gitrepos
 ```
 
+### Install the dependencies
+
+Run
+
+```sh
+yarn
+```
+
 ## Starting the App
 
-Once you are done with the steps above, run:
+Once this is done with the steps above, run
 
 ```sh
-yarn up
+yarn start
 ```
 
-This will build the docker container and start the app on http://0.0.0.0:3000.
-
-To view the running container, run
-
-```sh
-docker container ls
-```
+The browser is expected to launch the app on the browser on http://localhost:3000.
 
 ## Contributing
 
@@ -69,7 +70,6 @@ If you have never worked with the technologies used in this repository, here are
 - [SCSS](https://sass-lang.com)
 - [Jest](https://jestjs.io)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
-- [Docker](https://docs.docker.com)
 
 ## Testing
 
@@ -78,14 +78,6 @@ Run tests to validate that code changes doesn't degrade the application.
 ```sh
 yarn test
 yarn test:coverage
-```
-
-## Stopping the App
-
-To stop the app, run;
-
-```sh
-yarn down
 ```
 
 ## License
