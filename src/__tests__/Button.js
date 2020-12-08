@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { cleanup, render, fireEvent } from "@testing-library/react";
 import Button from "../components/Button";
 
 describe("Button Component", () => {
@@ -12,6 +12,8 @@ describe("Button Component", () => {
     type: "button"
   };
 
+  afterEach(cleanup);
+
   test("render the correct label", () => {
     const { getByRole } = render(<Button {...props} />);
     expect(getByRole("button")).toHaveTextContent(props.label);
@@ -20,6 +22,6 @@ describe("Button Component", () => {
   test("invoke an API request when clicked", () => {
     const { getByTestId } = render(<Button {...props} />);
     fireEvent.click(getByTestId("find_repositories"));
-    expect(props.handleClick).toBeCalled();
+    expect(props.handleClick).toBeCalledTimes(1);
   });
 });
