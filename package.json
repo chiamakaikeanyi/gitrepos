@@ -25,7 +25,22 @@
     "up": "docker-compose up",
     "down": "docker-compose stop",
     "list": "docker-compose ps",
-    "prune": "docker system prune --all --volumes --force"
+    "prune": "docker system prune --all --volumes --force",
+    "lint": "eslint --debug 'src/**/*.{js,jsx,ts,tsx}' --fix"
+  },
+  "lint-staged": {
+    "*.js": [
+      "pretty-quick --staged"
+    ],
+    "*.{scss}": [
+      "stylelint --fix",
+      "pretty-quick --staged"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint && yarn test && lint-staged"
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -40,21 +55,29 @@
           "ignoreCase": true
         }
       ],
+      "jsx-a11y/label-has-associated-control": [
+        "error",
+        {
+          "required": {
+            "some": [
+              "nesting",
+              "id"
+            ]
+          }
+        }
+      ],
+      "jsx-a11y/label-has-for": [
+        "error",
+        {
+          "required": {
+            "some": [
+              "nesting",
+              "id"
+            ]
+          }
+        }
+      ],
       "no-console": "error"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "pretty-quick --staged"
-    ],
-    "*.{css}": [
-      "stylelint --fix",
-      "pretty-quick --staged"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn test && lint-staged"
     }
   },
   "browserslist": {
