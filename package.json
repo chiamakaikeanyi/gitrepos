@@ -22,11 +22,6 @@
     "eject": "react-scripts eject",
     "stylelint": "stylelint src/**/**/*.scss",
     "precommit": "yarn run lint-staged",
-    "serve": "docker-compose up -d --build",
-    "up": "docker-compose up",
-    "down": "docker-compose stop",
-    "list": "docker-compose ps",
-    "prune": "docker system prune --all --volumes --force",
     "lint": "eslint --debug 'src/**/*.{js,jsx,ts,tsx}' --fix"
   },
   "lint-staged": {
