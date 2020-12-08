@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { composeClasses } from "../../utils";
-import styles from "./input.module.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { composeClasses } from '../../utils';
+import styles from './input.module.scss';
 
-const Input = ({ className, handleChange, label, name, placeholder, testId, type }) => {
+const Input = ({ className, handleChange, label, name, placeholder, testId, type, username }) => {
   return (
     <>
       <label className={styles.sr_only} htmlFor={name}>
@@ -16,7 +16,7 @@ const Input = ({ className, handleChange, label, name, placeholder, testId, type
         id={name}
         name={name}
         onChange={handleChange}
-        placeholder={placeholder || " "}
+        placeholder={placeholder || ' '}
         type={type}
       />
     </>
@@ -29,7 +29,8 @@ Input.propTypes = {
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   testId: PropTypes.string,
-  type: PropTypes.string.isRequired
+  type: PropTypes.string.isRequired,
+  username: PropTypes.string
 };
 
 export default Input;
