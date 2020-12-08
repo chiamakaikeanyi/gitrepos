@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { composeClasses } from '../../utils';
 import styles from './input.module.scss';
 
-const Input = ({ className, handleChange, label, name, placeholder, testId, type, username }) => {
+const Input = ({ className, handleChange, label, name, placeholder, testId, type }) => {
   return (
     <>
       <label className={styles.sr_only} htmlFor={name}>
@@ -29,8 +29,7 @@ Input.propTypes = {
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   testId: PropTypes.string,
-  type: PropTypes.string.isRequired,
-  username: PropTypes.string
+  type: PropTypes.string.isRequired
 };
 
 export default Input;
