@@ -15,7 +15,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
     "test:fix": "yarn test -u",
     "test:coverage": "yarn test --coverage",
     "eject": "react-scripts eject",
@@ -54,7 +54,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "yarn test && lint-staged"
     }
   },
   "browserslist": {

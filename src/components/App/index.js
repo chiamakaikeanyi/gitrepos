@@ -1,4 +1,4 @@
-import ErrorBoundary from "../ErrorBoundary.js/index.js";
+import ErrorBoundary from "../ErrorBoundary";
 
 function App() {
   return <ErrorBoundary>GitRepos</ErrorBoundary>;

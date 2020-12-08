@@ -1,0 +1,9 @@
+@import "../../styles/shared.scss";
+
+.input_field {
+  &::placeholder,
+  &::-moz-placeholder,
+  &::-webkit-input-placeholder {
+    color: var(--color_gray_3);
+  }
+}
