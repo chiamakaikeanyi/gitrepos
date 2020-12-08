@@ -11,7 +11,7 @@ import NotFound from '../NotFound';
 import styles from './app.module.scss';
 import { ReactComponent as Spinner } from '../../assets/spinner.svg';
 
-const { accessToken, apiRoot } = constants;
+const { apiRoot } = constants;
 
 const App = () => {
   const [username, setUsername] = useState('');
@@ -29,21 +29,15 @@ const App = () => {
     setError('');
 
     try {
-      await axios
-        .get(url, {
-          headers: {
-            Authorization: accessToken
-          }
-        })
-        .then(response => {
-          const linkData = response.headers.link;
-          const parsedLinkData = linkData && parseLink(linkData);
+      await axios.get(url).then(response => {
+        const linkData = response.headers.link;
+        const parsedLinkData = linkData && parseLink(linkData);
 
-          response && response.data && setRepositories(response.data);
-          parsedLinkData ? setNavigation(parsedLinkData) : setNavigation(null);
+        response && response.data && setRepositories(response.data);
+        parsedLinkData ? setNavigation(parsedLinkData) : setNavigation(null);
 
-          setLoading(false);
-        });
+        setLoading(false);
+      });
     } catch (error) {
       error && error.message && setError(error.message);
       setLoading(false);
