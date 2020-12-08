@@ -1,0 +1,8 @@
+@import "../../styles/shared.scss";
+
+.button {
+  border: to-rem(1) solid transparent;
+  border-radius: to-rem(3);
+  cursor: pointer;
+  padding: to-rem(10);
+}
