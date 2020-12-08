@@ -1,0 +1,26 @@
+@import "../../styles/shared.scss";
+
+.navigation_wrapper {
+  margin: to-rem(16);
+  text-align: center;
+}
+
+.navigation_button {
+  background-color: var(--color_gray_6);
+  border-color: var(--color_gray_1);
+  color: var(--color_blue_1);
+  font-weight: 500;
+
+  &:disabled {
+    background-color: var(--color_disabled);
+    color: var(--color_gray_5);
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled) {
+    &:hover {
+      background: var(--color_blue_2);
+      color: var(--color_white);
+    }
+  }
+}
