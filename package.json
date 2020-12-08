@@ -19,7 +19,7 @@
     "test:fix": "yarn test -u";,
     "test:coverage": "yarn test --coverage";,
     "eject": "react-scripts eject";,
-    "stylelint": "stylelint  src/**/*.scss src/pages/**/*.scss src/components/**/*.scss";,
+    "stylelint": "stylelint src/pages/**/*.scss src/components/**/*.scss";,
     "precommit": "yarn run lint-staged";,
     "serve": "docker-compose up -d --build";,
     "up": "docker-compose up";,
