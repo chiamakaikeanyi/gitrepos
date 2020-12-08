@@ -78,6 +78,7 @@ const App = () => {
           type="button"
         />
       </div>
+
       <section>
         {loading && (
           <div className={styles.spinner_wrapper}>

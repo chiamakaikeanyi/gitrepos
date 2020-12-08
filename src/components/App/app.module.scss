@@ -39,6 +39,8 @@
   background-color: var(--color_blue_1);
   color: var(--color_white);
   margin-left: to-rem(5);
+  height: to-rem(40);
+  line-height: initial;
 
   &:hover {
     box-shadow: 0 to-rem(4 8) 0 var(--color_gray_1);
@@ -50,6 +52,16 @@
   }
 }
 
-.spinner_wrapper {
-  text-align: center;
+.spinner {
+  width: to-rem(60);
+
+  &_wrapper {
+    text-align: center;
+  }
+}
+
+@include md {
+  .spinner {
+    width: to-rem(100);
+  }
 }
