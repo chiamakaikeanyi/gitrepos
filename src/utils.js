@@ -14,3 +14,9 @@ export const composeClasses = (...styles) => {
 
   return classes.trim();
 };
+
+/**
+ * @param array
+ * @returns {Boolean}
+ */
+export const isNotEmptyArray = array => Array.isArray(array) && array.length > 0;
