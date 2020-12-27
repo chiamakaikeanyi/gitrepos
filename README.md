@@ -35,7 +35,7 @@ git clone git@github.com:chiamakaikeanyi/gitrepos.git
 **Via HTTPS**
 
 ```sh
-git clone https://github.com:chiamakaikeanyi/gitrepos.git
+git clone https://github.com/chiamakaikeanyi/gitrepos.git
 ```
 
 ### Switch to the directory
